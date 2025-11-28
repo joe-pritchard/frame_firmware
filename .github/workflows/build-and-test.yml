@@ -1,4 +1,4 @@
-name: CI
+name: Build and Test
 
 on:
   push:
@@ -24,6 +24,9 @@ jobs:
       with:
         elixir-version: ${{ env.ELIXIR_VERSION }}
         otp-version: ${{ env.OTP_VERSION }}
+
+    - name: Setup nerves
+      uses: ./.github/actions/setup-nerves
     
     - name: Restore dependencies cache
       uses: actions/cache@v4

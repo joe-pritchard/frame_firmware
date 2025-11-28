@@ -1,0 +1,22 @@
+name: 'Setup Nerves'
+description: 'Install Nerves dependencies and bootstrap'
+runs:
+  using: "composite"
+  steps:
+    - name: Install build dependencies
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt install -y build-essential automake autoconf git squashfs-tools pkg-config curl libmnl-dev libnl-genl-3-dev libssl-dev libncurses5-dev help2man libconfuse-dev libarchive-dev file unzip libgnutls28-dev
+    
+    - name: Install Hex
+      shell: bash
+      run: mix local.hex --force
+
+    - name: Install Rebar3
+      shell: bash
+      run: mix local.rebar --force
+
+    - name: Install Nerves Bootstrap
+      shell: bash
+      run: mix archive.install --force hex nerves_bootstrap

@@ -92,7 +92,6 @@
         ],
         disabled: [
           # Controversial and subjective checks that you might want disabled
-          {Credo.Check.Design.AliasUsage, []},
           {Credo.Check.Readability.Specs, []},  # Would enforce @spec everywhere - enable if you want strict
           {Credo.Check.Refactor.ABCSize, []},
           {Credo.Check.Refactor.AppendSingleItem, []},

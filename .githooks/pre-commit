@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Running checks: mix format, credo, compile, dialyzer"
+echo "Running pre-commit checks: mix format, credo, compile, dialyzer"
 
-# ensure we run in project root
+# ensure we run in project root (in case git runs hook from .git)
 if [ -n "${GIT_DIR:-}" ]; then
   # If GIT_DIR set, try to change to repository root
   if [ -d "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
@@ -23,6 +23,6 @@ mix compile --warnings-as-errors
 echo "-> mix dialyzer"
 mix dialyzer
 
-echo "checks passed."
+echo "Pre-commit checks passed."
 
 exit 0
