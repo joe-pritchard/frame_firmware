@@ -2,10 +2,13 @@ runs:
   using: "composite"
   steps:
     - name: Install Hex
+      shell: bash
       run: mix local.hex
 
     - name: Install Rebar3
+      shell: bash
       run: mix local.rebar
 
     - name: Install Nerves Bootstrap
+      shell: bash
       run: mix archive.install hex nerves_bootstrap
