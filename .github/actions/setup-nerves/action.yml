@@ -9,11 +9,11 @@ runs:
     
     - name: Install Hex
       shell: bash
-      run: mix local.hex
+      run: mix local.hex --force
 
     - name: Install Rebar3
       shell: bash
-      run: mix local.rebar
+      run: mix local.rebar --force
 
     - name: Install Nerves Bootstrap
       shell: bash
