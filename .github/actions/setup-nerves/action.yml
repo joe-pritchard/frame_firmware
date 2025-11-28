@@ -1,6 +1,22 @@
 runs:
   using: "composite"
   steps:
+    - name: Install build dependencies
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt install -y build-essential automake autoconf git squashfs-tools pkg-config curl libmnl-dev libnl-genl-3-dev libssl-dev libncurses5-dev help2man libconfuse-dev libarchive-dev file unzip libgnutls28-dev
+
+    - name: Install asdf
+      uses: asdf-vm/actions/install@v4
+
+    - name: Install fwup
+      shell: bash
+      run: |
+        asdf plugin add fwup https://github.com/fwup-home/asdf-fwup.git
+        asdf install fwup latest
+        asdf global fwup latest
+    
     - name: Install Hex
       shell: bash
       run: mix local.hex
