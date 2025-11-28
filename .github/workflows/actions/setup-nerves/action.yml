@@ -1,0 +1,10 @@
+runs:
+  steps:
+    - name: Install Hex
+      run: mix local.hex
+
+    - name: Install Rebar3
+      run: mix local.rebar
+
+    - name: Install Nerves Bootstrap
+      run: mix archive.install hex nerves_bootstrap
