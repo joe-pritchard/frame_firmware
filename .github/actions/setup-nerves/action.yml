@@ -1,3 +1,5 @@
+name: 'Setup Nerves'
+description: 'Install Nerves dependencies and bootstrap'
 runs:
   using: "composite"
   steps:
