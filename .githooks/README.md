@@ -1,8 +1,7 @@
 This folder contains repository-local Git hooks.
 
 Install instructions
-- Run the bash script: `scripts/setup-hooks` from the repository root, or
-- On Windows PowerShell run: `.	ools\setup-hooks.ps1` or `.\scripts\setup-hooks.ps1`.
+- Run the bash script: `scripts/setup-hooks` from the repository root
 
 After running the setup script, Git will execute `.githooks/pre-commit` before commits.
 
